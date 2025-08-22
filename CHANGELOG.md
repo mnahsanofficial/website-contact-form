@@ -5,13 +5,32 @@ All notable changes to the `website-contact-form` project will be documented in 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.3] - 2025-01-27
+## [1.1.0] - 2025-01-27
+
+### 🚀 Major React Compatibility Hotfix
+- **Complete React integration overhaul** with `ReactContactForm` component
+- **Resolved critical DOM manipulation conflicts** that caused React runtime errors
+- **Fixed TypeScript declarations** generation and included proper type definitions
+- **Added React peer dependencies** and proper build configuration
+- **Enhanced documentation** with comprehensive React usage examples and API reference
+- **Build system overhaul** with proper Vite configuration for React compatibility
+
+## [1.0.4] - 2025-01-27
+
+### 🚀 React Compatibility & TypeScript Fixes
+- **Added React component wrapper** (`ReactContactForm`) for seamless React integration
+- **Fixed TypeScript declarations** generation and included proper type definitions
+- **Added React peer dependencies** and proper build configuration
+- **Enhanced documentation** with React usage examples and API reference
+- **Resolved DOM manipulation conflicts** between library and React lifecycle
 
 ### 🔧 Bug Fixes & Cleanup
 - **Fixed contact form preview image** display in README.md
 - **Cleaned up unnecessary summary files** for better package organization
 - **Simplified package structure** while maintaining all functionality
 - **Improved documentation clarity** and maintainability
+
+## [1.0.3] - 2025-01-27
 
 ## [1.0.2] - 2025-01-27
 
@@ -127,6 +146,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **1.1.0** - Major React compatibility hotfix, TypeScript declarations, and build system overhaul
+- **1.0.4** - React compatibility, TypeScript declarations, and build fixes
 - **1.0.3** - Bug fixes, image display fix, and package cleanup
 - **1.0.2** - Visual enhancements and version comparison documentation
 - **1.0.1** - Documentation updates and package improvements

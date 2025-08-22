@@ -26,22 +26,37 @@ Experience the enhanced CKEditor with all formatting features, responsive design
 
 ## 📈 Version Comparison
 
-| Feature | v1.0.0 | v1.0.1 | v1.0.2 | Status |
-|---------|---------|---------|---------|---------|
-| **Core Library** | ✅ | ✅ | ✅ | Stable |
-| **Enhanced CKEditor** | ✅ | ✅ | ✅ | Enhanced |
-| **EmailJS Integration** | ✅ | ✅ | ✅ | Stable |
-| **TypeScript Support** | ✅ | ✅ | ✅ | Complete |
-| **UMD + ESM Builds** | ✅ | ✅ | ✅ | Optimized |
-| **Responsive Design** | ✅ | ✅ | ✅ | Mobile-First |
-| **Accessibility** | ✅ | ✅ | ✅ | WCAG Compliant |
-| **Anti-Spam Protection** | ✅ | ✅ | ✅ | Production Ready |
-| **Documentation** | ✅ | ✅ | ✅ | Comprehensive |
-| **CHANGELOG.md** | ❌ | ✅ | ✅ | **NEW** |
-| **Contact Form Preview** | ❌ | ✅ | ✅ | **NEW** |
-| **Package Optimization** | ✅ | ✅ | ✅ | **IMPROVED** |
-| **Version Comparison** | ❌ | ❌ | ✅ | **NEW** |
+| Feature | v1.0.0 | v1.0.1 | v1.0.2 | v1.0.3 | v1.0.4 | v1.1.0 | Status |
+|---------|---------|---------|---------|---------|---------|---------|---------|
+| **Core Library** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Stable |
+| **Enhanced CKEditor** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Enhanced |
+| **EmailJS Integration** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Stable |
+| **TypeScript Support** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Complete |
+| **UMD + ESM Builds** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Optimized |
+| **Responsive Design** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Mobile-First |
+| **Accessibility** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | WCAG Compliant |
+| **Anti-Spam Protection** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Production Ready |
+| **Documentation** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | Comprehensive |
+| **CHANGELOG.md** | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | **NEW** |
+| **Contact Form Preview** | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | **NEW** |
+| **Package Optimization** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | **IMPROVED** |
+| **Version Comparison** | ❌ | ❌ | ✅ | ✅ | ✅ | ✅ | **NEW** |
+| **Image Integration** | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | **NEW** |
+| **Package Cleanup** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | **NEW** |
+| **React Compatibility** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | **NEW** |
+| **TypeScript Declarations** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | **NEW** |
+| **Build System Fixes** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | **NEW** |
+| **React Component Wrapper** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | **NEW** |
+| **DOM Conflict Resolution** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | **NEW** |
+| **Major Build Overhaul** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | **NEW** |
 | **Local Image Assets** | ❌ | ❌ | ✅ | **NEW** |
+
+### 🔄 **What's New in v1.1.0**
+- **🚀 React Component Wrapper** - New `ReactContactForm` component for seamless React integration
+- **🔧 DOM Conflict Resolution** - Fixed critical React runtime errors and DOM manipulation conflicts
+- **📝 TypeScript Declarations** - Complete TypeScript support with proper `.d.ts` files
+- **⚙️ Build System Overhaul** - Major Vite configuration improvements for React compatibility
+- **📚 Enhanced Documentation** - Comprehensive React usage examples and API reference
 
 ### 🔄 **What's New in v1.0.2**
 - **🖼️ Local Image Assets** - Contact form preview image included in package
@@ -114,11 +129,57 @@ const form = await createContactForm({
 form.destroy();
 ```
 
+### React Usage
+
+```tsx
+import React from 'react';
+import { ReactContactForm } from 'website-contact-form';
+import 'website-contact-form/dist/style.css';
+
+const ContactPage: React.FC = () => {
+  return (
+    <div>
+      <h1>Contact Us</h1>
+      <ReactContactForm
+        theme="light"
+        labels={{
+          title: "Send Us a Message",
+          name: "Your Name",
+          email: "Email Address",
+          message: "Your Message"
+        }}
+        buttonText="Send Message"
+        onSubmit={(data) => {
+          console.log('Form submitted:', data);
+        }}
+      />
+    </div>
+  );
+};
+```
+
+**Note**: For React usage, make sure to install React as a peer dependency:
+```bash
+npm install react react-dom
+```
+
 ## 📚 API Reference
 
 ### `createContactForm(options)`
 
 Creates and mounts a contact form, returning a destroyable handle.
+
+### `ReactContactForm` (React Component)
+
+A React component wrapper that handles lifecycle management automatically.
+
+```tsx
+<ReactContactForm
+  theme="light"
+  labels={{ title: "Contact Us" }}
+  onSubmit={(data) => console.log(data)}
+/>
+```
 
 #### Options
 

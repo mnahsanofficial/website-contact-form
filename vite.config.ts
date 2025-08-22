@@ -10,11 +10,13 @@ export default defineConfig({
       formats: ['es', 'umd']
     },
     rollupOptions: {
-      external: ['@ckeditor/ckeditor5-build-classic', 'emailjs-com'],
+      external: ['@ckeditor/ckeditor5-build-classic', 'emailjs-com', 'react', 'react-dom'],
       output: {
         globals: {
           '@ckeditor/ckeditor5-build-classic': 'CKEditor',
-          'emailjs-com': 'emailjs'
+          'emailjs-com': 'emailjs',
+          'react': 'React',
+          'react-dom': 'ReactDOM'
         }
       }
     },
