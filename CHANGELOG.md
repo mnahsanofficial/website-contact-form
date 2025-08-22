@@ -5,6 +5,53 @@ All notable changes to the `website-contact-form` project will be documented in 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2025-01-27
+
+### 🚀 Major Release - Complete Framework Compatibility & Documentation Overhaul
+- **Major version bump** to reflect significant improvements and stability
+- **Complete React compatibility** with zero DOM conflicts
+- **Universal framework support** for React, Vue.js, Angular, and Vite
+- **Comprehensive documentation** with framework-specific installation guides
+- **Enhanced build system** optimized for all modern frameworks
+- **Improved TypeScript support** with full type definitions
+- **Better error handling** and validation across all frameworks
+- **Performance optimizations** for production environments
+
+### 🔧 Technical Improvements
+- **Eliminated innerHTML usage** for React-safe DOM manipulation
+- **Enhanced DOM readiness checks** for better framework synchronization
+- **Improved React component lifecycle** management
+- **Better memory management** and cleanup procedures
+- **Optimized bundle sizes** for faster loading
+
+## [1.1.3] - 2025-01-27
+
+### 🧹 Code Cleanup & Framework Guides
+- **Removed unused commented code** for cleaner codebase
+- **Created comprehensive React installation guide** with examples and best practices
+- **Created comprehensive Vue.js installation guide** with composables and patterns
+- **Created comprehensive Angular installation guide** with services and components
+- **Created comprehensive Vite installation guide** with vanilla JS examples
+- **Organized documentation** into framework-specific guides for better developer experience
+
+## [1.1.2] - 2025-01-27
+
+### 🚀 Global DOM Conflict Resolution
+- **Eliminated innerHTML usage** - replaced with programmatic DOM creation
+- **Fixed React DOM conflicts** by using proper DOM methods instead of string manipulation
+- **Enhanced React compatibility** with safe DOM element creation and cleanup
+- **Improved form initialization** with better element reference management
+- **Resolved global DOM manipulation issues** that caused crashes in React applications
+
+## [1.1.1] - 2025-01-27
+
+### 🔧 React 19 Compatibility & DOM Fixes
+- **Added React 19 support** in peer dependencies
+- **Enhanced DOM readiness checks** to prevent "Editor element not found" errors
+- **Improved React component lifecycle** with better initialization timing
+- **Fixed DOM attachment validation** to ensure elements are properly mounted
+- **Increased initialization delays** for better React compatibility
+
 ## [1.1.0] - 2025-01-27
 
 ### 🚀 Major React Compatibility Hotfix

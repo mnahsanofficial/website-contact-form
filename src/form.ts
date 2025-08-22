@@ -52,7 +52,7 @@ export class ContactForm implements Destroyable {
     const buttonText = this.options.buttonText || 'Send Message';
     const title = labels.title || 'Send Me a Message';
 
-    this.container.className = `wcf wcf--${theme}`;
+    this.container.setAttribute('class', `wcf wcf--${theme}`);
     
     this.container.innerHTML = `
       <div class="wcf__card">

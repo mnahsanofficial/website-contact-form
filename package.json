@@ -1,6 +1,6 @@
 {
   "name": "website-contact-form",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A framework-agnostic, TypeScript contact form library with CKEditor and EmailJS integration",
   "type": "module",
   "main": "./dist/index.umd.js",
@@ -54,8 +54,8 @@
   "peerDependencies": {
     "@ckeditor/ckeditor5-build-classic": "^40.0.0",
     "emailjs-com": "^3.2.0",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "repository": {
     "type": "git",
