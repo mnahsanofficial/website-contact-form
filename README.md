@@ -2,7 +2,9 @@
 
 A **framework-agnostic**, **TypeScript** contact form library that any website can embed with a single function call. Features rich text editing with CKEditor 5 and optional email delivery via EmailJS.
 
-![Contact Form Preview](https://via.placeholder.com/800x400/667eea/ffffff?text=Modern+Contact+Form+Preview)
+![Contact Form Preview](./src/assets/images/Screenshot%202025-08-22%20at%204.27.44%20PM.png)
+
+*The enhanced contact form with CKEditor 5 rich text editor, featuring comprehensive formatting tools including bold, italic, links, tables, lists, and alignment options.*
 
 ## 🌐 Live Demo
 
@@ -21,6 +23,37 @@ Experience the enhanced CKEditor with all formatting features, responsive design
 - 📱 **Responsive** - Mobile-first design that works on all devices
 - 🎯 **TypeScript** - Full type safety and IntelliSense support
 - 🌐 **UMD + ESM** - Works with script tags and modern bundlers
+
+## 📈 Version Comparison
+
+| Feature | v1.0.0 | v1.0.1 | v1.0.2 | Status |
+|---------|---------|---------|---------|---------|
+| **Core Library** | ✅ | ✅ | ✅ | Stable |
+| **Enhanced CKEditor** | ✅ | ✅ | ✅ | Enhanced |
+| **EmailJS Integration** | ✅ | ✅ | ✅ | Stable |
+| **TypeScript Support** | ✅ | ✅ | ✅ | Complete |
+| **UMD + ESM Builds** | ✅ | ✅ | ✅ | Optimized |
+| **Responsive Design** | ✅ | ✅ | ✅ | Mobile-First |
+| **Accessibility** | ✅ | ✅ | ✅ | WCAG Compliant |
+| **Anti-Spam Protection** | ✅ | ✅ | ✅ | Production Ready |
+| **Documentation** | ✅ | ✅ | ✅ | Comprehensive |
+| **CHANGELOG.md** | ❌ | ✅ | ✅ | **NEW** |
+| **Contact Form Preview** | ❌ | ✅ | ✅ | **NEW** |
+| **Package Optimization** | ✅ | ✅ | ✅ | **IMPROVED** |
+| **Version Comparison** | ❌ | ❌ | ✅ | **NEW** |
+| **Local Image Assets** | ❌ | ❌ | ✅ | **NEW** |
+
+### 🔄 **What's New in v1.0.2**
+- **🖼️ Local Image Assets** - Contact form preview image included in package
+- **📊 Version Comparison** - Comprehensive feature comparison table
+- **📋 VERSION_COMPARISON.md** - Detailed analysis of all versions
+- **📦 Enhanced Package** - Assets directory included for better organization
+
+### 🔄 **What's New in v1.0.1**
+- **📝 CHANGELOG.md** - Complete feature documentation and version history
+- **🖼️ Contact Form Preview** - Professional screenshot showcasing all features
+- **📦 Package Enhancement** - Better file organization and documentation inclusion
+- **🔗 Link Updates** - Live demo and company information properly linked
 
 ## 🚀 Quick Start
 

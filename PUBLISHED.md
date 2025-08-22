@@ -3,11 +3,12 @@
 ## 📦 Package Information
 
 - **Package Name**: `website-contact-form`
-- **Version**: `1.0.0`
+- **Version**: `1.0.1` (Latest)
 - **License**: MIT
 - **Published By**: `triotrix_tech_solutions`
 - **Published**: Just now
-- **Package Size**: 20.6 kB (compressed), 95.0 kB (unpacked)
+- **Package Size**: 22.1 kB (compressed), 99.8 kB (unpacked)
+- **Total Files**: 8 files including CHANGELOG.md and README.md
 
 ## 🔗 Important Links
 
