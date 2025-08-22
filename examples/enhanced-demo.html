@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced CKEditor Demo - Website Contact Form</title>
+    <link rel="stylesheet" href="../dist/style.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .demo-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .demo-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .demo-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .demo-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .demo-section h2 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .demo-section p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .feature-item h4 {
+            margin: 0 0 0.5rem 0;
+            color: #1f2937;
+        }
+        
+        .feature-item p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .demo-footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-header h1 {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🚀 Enhanced CKEditor Demo</h1>
+            <p>Experience the full power of our enhanced rich text editor with advanced formatting options</p>
+        </div>
+        
+        <div class="demo-section">
+            <h2>✨ Enhanced Features</h2>
+            <p>Our CKEditor now includes a comprehensive set of formatting tools:</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>📝 Text Formatting</h4>
+                    <p>Bold, italic, underline, strikethrough, code, and remove format</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🎨 Colors & Typography</h4>
+                    <p>Font size, font family, text color, and background color</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📋 Lists & Structure</h4>
+                    <p>Bulleted lists, numbered lists, todo lists, indentation</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔗 Links & Media</h4>
+                    <p>Links, bookmarks, horizontal lines, and tables</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📚 Advanced Elements</h4>
+                    <p>Headings, blockquotes, code blocks, and alignment</p>
+                </div>
+                <div class="feature-item">
+                    <h4>↩️ History</h4>
+                    <p>Undo and redo functionality</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>🎯 Try It Out</h2>
+            <p>Use the enhanced rich text editor below to create beautifully formatted messages:</p>
+            
+            <!-- Enhanced contact form will be mounted here -->
+            <div id="contact-enhanced"></div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>💡 Pro Tips</h2>
+            <ul style="color: #6b7280; line-height: 1.8;">
+                <li><strong>Headings:</strong> Use the heading dropdown to create structured content</li>
+                <li><strong>Colors:</strong> Highlight important text with colors and backgrounds</li>
+                <li><strong>Tables:</strong> Insert tables for organized data presentation</li>
+                <li><strong>Lists:</strong> Create todo lists for actionable items</li>
+                <li><strong>Code:</strong> Use code blocks for technical content</li>
+                <li><strong>Alignment:</strong> Center, left, or right-align your content</li>
+            </ul>
+        </div>
+        
+        <div class="demo-footer">
+            <p>Built with ❤️ using TypeScript, Enhanced CKEditor 5, and EmailJS</p>
+        </div>
+    </div>
+
+    <!-- Load dependencies from CDN -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    
+    <!-- Load our enhanced library -->
+    <script src="../dist/index.umd.js"></script>
+    
+    <script>
+        // Initialize the enhanced contact form
+        async function initEnhancedForm() {
+            try {
+                console.log('Initializing enhanced contact form...');
+                
+                const form = await WebsiteContactForm.createContactForm({
+                    target: '#contact-enhanced',
+                    theme: 'light',
+                    labels: {
+                        title: 'Enhanced Rich Text Editor',
+                        name: 'Your Name',
+                        email: 'Email Address',
+                        message: 'Your Message (Enhanced Editor)'
+                    },
+                    placeholders: {
+                        name: 'Enter your full name',
+                        email: 'your.email@example.com',
+                        message: 'Start typing here! Try using the toolbar above to format your message with headings, colors, lists, tables, and more advanced features.'
+                    },
+                    buttonText: 'Send Enhanced Message',
+                    onSubmit: (data) => {
+                        console.log('Enhanced form submitted:', data);
+                        
+                        // Show a nice alert with the formatted content
+                        const message = `
+🎉 Enhanced Form Submitted!
+
+📝 Name: ${data.name}
+📧 Email: ${data.email}
+📄 Message Length: ${data.messageText.length} characters
+🖥️ HTML Content: ${data.messageHtml.substring(0, 200)}${data.messageHtml.length > 200 ? '...' : ''}
+
+Check the browser console for the complete data!
+                        `;
+                        
+                        alert(message);
+                    },
+                    onSuccessMessage: '🎉 Enhanced message sent successfully! Your rich formatting has been preserved.',
+                    onErrorMessage: '❌ Failed to send enhanced message. Please try again.'
+                });
+                
+                console.log('Enhanced contact form initialized successfully!');
+                
+            } catch (error) {
+                console.error('Failed to initialize enhanced contact form:', error);
+                document.getElementById('contact-enhanced').innerHTML = 
+                    `<div style="color: red; text-align: center; padding: 2rem;">
+                        <h3>Failed to load enhanced contact form</h3>
+                        <p>Error: ${error.message}</p>
+                        <p>Please check the browser console for details.</p>
+                    </div>`;
+            }
+        }
+        
+        // Wait for all scripts to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a delay to ensure all dependencies are loaded
+            setTimeout(initEnhancedForm, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Contact Form - Demo</title>
+    <link rel="stylesheet" href="../dist/style.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .demo-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .demo-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .demo-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .demo-section h2 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .demo-section p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .theme-toggle {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+        
+        .theme-toggle:hover {
+            background: #e5e7eb;
+        }
+        
+        .theme-toggle.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        
+        .demo-footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .demo-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>Website Contact Form</h1>
+            <p>A framework-agnostic, TypeScript contact form library with CKEditor and EmailJS integration</p>
+        </div>
+        
+        <div class="demo-grid">
+            <div class="demo-section">
+                <h2>Light Theme</h2>
+                <p>Clean, modern contact form with light styling. Perfect for bright websites.</p>
+                <div id="contact-light"></div>
+            </div>
+            
+            <div class="demo-section">
+                <h2>Dark Theme</h2>
+                <p>Elegant dark theme with the same functionality. Great for dark mode websites.</p>
+                <div id="contact-dark"></div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Custom Styling</h2>
+            <p>Form with custom accent colors and labels. Shows the flexibility of the library.</p>
+            <div id="contact-custom"></div>
+        </div>
+        
+        <div class="demo-footer">
+            <p>Built with ❤️ using TypeScript, CKEditor 5, and EmailJS</p>
+        </div>
+    </div>
+
+    <!-- Load dependencies -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    
+    <!-- Load our library -->
+    <script src="../dist/index.umd.js"></script>
+    
+    <script>
+        // Initialize forms when the page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Light theme form
+                const lightForm = await WebsiteContactForm.createContactForm({
+                    target: '#contact-light',
+                    theme: 'light',
+                    labels: {
+                        title: 'Get in Touch',
+                        name: 'Full Name',
+                        email: 'Email Address',
+                        message: 'Your Message'
+                    },
+                    placeholders: {
+                        name: 'John Doe',
+                        email: 'john@example.com',
+                        message: 'Hello! I\'d like to discuss...'
+                    },
+                    buttonText: 'Send Message',
+                    onSubmit: (data) => {
+                        console.log('Light form submitted:', data);
+                    }
+                });
+
+                // Dark theme form
+                const darkForm = await WebsiteContactForm.createContactForm({
+                    target: '#contact-dark',
+                    theme: 'dark',
+                    labels: {
+                        title: 'Send a Message',
+                        name: 'Your Name',
+                        email: 'Email',
+                        message: 'Message'
+                    },
+                    placeholders: {
+                        name: 'Jane Smith',
+                        email: 'jane@example.com',
+                        message: 'Tell us about your project...'
+                    },
+                    buttonText: 'Submit',
+                    onSubmit: (data) => {
+                        console.log('Dark form submitted:', data);
+                    }
+                });
+
+                // Custom styled form
+                const customForm = await WebsiteContactForm.createContactForm({
+                    target: '#contact-custom',
+                    theme: 'light',
+                    labels: {
+                        title: 'Let\'s Work Together',
+                        name: 'Your Name',
+                        email: 'Email Address',
+                        message: 'Project Details'
+                    },
+                    placeholders: {
+                        name: 'Your full name',
+                        email: 'your.email@domain.com',
+                        message: 'Describe your project requirements...'
+                    },
+                    buttonText: 'Start Project',
+                    accentGradient: 'linear-gradient(90deg, #f59e0b, #dc2626)',
+                    onSubmit: (data) => {
+                        console.log('Custom form submitted:', data);
+                    }
+                });
+
+                console.log('All forms initialized successfully!');
+                
+            } catch (error) {
+                console.error('Failed to initialize forms:', error);
+            }
+        });
+
+        // Example of EmailJS configuration (commented out for demo)
+        /*
+        const emailJSForm = await WebsiteContactForm.createContactForm({
+            target: '#contact-emailjs',
+            theme: 'light',
+            emailJS: {
+                serviceId: 'your_service_id',
+                templateId: 'your_template_id',
+                publicKey: 'your_public_key'
+            },
+            onSubmit: (data) => {
+                console.log('Form data:', data);
+                // This will be called before EmailJS sends the email
+            }
+        });
+        */
+    </script>
+</body>
+</html>

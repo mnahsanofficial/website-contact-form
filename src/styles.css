@@ -1,0 +1,315 @@
+/* Website Contact Form - Component Styles */
+/* Scoped to .wcf namespace to avoid collisions */
+
+.wcf {
+  --bg: #ffffff;
+  --fg: #1f2937;
+  --muted: #6b7280;
+  --border: #d1d5db;
+  --ring: #3b82f6;
+  --accentStart: #2563eb;
+  --accentEnd: #7c3aed;
+  --error: #dc2626;
+  --success: #16a34a;
+  --input-bg: #f9fafb;
+  --input-border: #e5e7eb;
+  --input-focus-border: #3b82f6;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--fg);
+}
+
+/* Dark theme overrides */
+.wcf--dark {
+  --bg: #1f2937;
+  --fg: #f9fafb;
+  --muted: #9ca3af;
+  --border: #374151;
+  --ring: #60a5fa;
+  --input-bg: #374151;
+  --input-border: #4b5563;
+  --input-focus-border: #60a5fa;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+.wcf__card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.wcf__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--fg);
+  margin: 0 0 2rem 0;
+  text-align: center;
+  background: linear-gradient(90deg, var(--accentStart), var(--accentEnd));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wcf__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wcf__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wcf__label {
+  font-weight: 600;
+  color: var(--fg);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.wcf__input {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--fg);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.wcf__input:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.wcf__input:invalid {
+  border-color: var(--error);
+}
+
+.wcf__editor {
+  min-height: 300px;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  transition: all 0.2s ease;
+}
+
+.wcf__editor:focus-within {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* CKEditor customization */
+.wcf__editor .ck-editor__editable {
+  background: var(--input-bg) !important;
+  color: var(--fg) !important;
+  border: none !important;
+  min-height: 300px !important;
+  padding: 1rem !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+.wcf__editor .ck-editor__editable:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.wcf__editor .ck-toolbar {
+  background: var(--bg) !important;
+  border: 1px solid var(--border) !important;
+  border-bottom: none !important;
+  border-radius: 8px 8px 0 0 !important;
+  padding: 0.5rem !important;
+}
+
+.wcf__editor .ck-toolbar .ck-toolbar__items {
+  flex-wrap: wrap !important;
+  gap: 0.25rem !important;
+}
+
+.wcf__editor .ck-toolbar .ck-button {
+  color: var(--fg) !important;
+}
+
+.wcf__editor .ck-toolbar .ck-button:hover {
+  background: var(--input-bg) !important;
+}
+
+.wcf__editor .ck-editor__main {
+  border-radius: 0 0 8px 8px !important;
+}
+
+.wcf__editor .ck-content {
+  font-family: inherit !important;
+}
+
+.wcf__editor .ck-heading-dropdown .ck-button__label {
+  color: var(--fg) !important;
+}
+
+.wcf__editor .ck-color-dropdown .ck-button__label {
+  color: var(--fg) !important;
+}
+
+.wcf__submit {
+  background: linear-gradient(90deg, var(--accentStart), var(--accentEnd));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  min-height: 3rem;
+}
+
+.wcf__submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.wcf__submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.wcf__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.wcf__submit-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wcf__spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.wcf__error {
+  color: var(--error);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.wcf__status {
+  margin-top: 1.5rem;
+  display: none;
+}
+
+.wcf__success {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--success);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  text-align: center;
+  font-weight: 500;
+}
+
+.wcf__status .wcf__error {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--error);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  text-align: center;
+  font-weight: 500;
+  display: block;
+}
+
+/* Honeypot field - hidden from users */
+.wcf__honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .wcf__card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .wcf__title {
+    font-size: 1.5rem;
+  }
+  
+  .wcf__submit {
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wcf__card {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .wcf__title {
+    font-size: 1.25rem;
+  }
+  
+  .wcf__form {
+    gap: 1rem;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .wcf {
+    --border: #000000;
+    --input-border: #000000;
+    --ring: #000000;
+  }
+  
+  .wcf__input,
+  .wcf__editor {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .wcf__submit,
+  .wcf__input,
+  .wcf__editor {
+    transition: none;
+  }
+  
+  .wcf__submit:hover:not(:disabled) {
+    transform: none;
+  }
+  
+  .wcf__spinner {
+    animation: none;
+  }
+}

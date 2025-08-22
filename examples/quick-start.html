@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start - Website Contact Form</title>
+    <link rel="stylesheet" href="../dist/style.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 2rem;
+        }
+        
+        .description {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Quick Start Demo</h1>
+        <p class="description">
+            This is a simple demo of the Website Contact Form library. 
+            The form below is fully functional and ready to use!
+        </p>
+        
+        <!-- Contact form will be mounted here -->
+        <div id="contact"></div>
+        
+        <div class="footer">
+            <p>Built with ❤️ using TypeScript, CKEditor 5, and EmailJS</p>
+        </div>
+    </div>
+
+    <!-- Load dependencies from CDN -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    
+    <!-- Load our library -->
+    <script src="../dist/index.umd.js"></script>
+    
+    <script>
+        // Initialize the contact form
+        async function initContactForm() {
+            console.log('Starting contact form initialization...');
+            
+            // Check if dependencies are loaded
+            if (typeof ClassicEditor === 'undefined') {
+                console.error('CKEditor not loaded');
+                return;
+            }
+            
+            if (typeof WebsiteContactForm === 'undefined') {
+                console.error('WebsiteContactForm library not loaded');
+                return;
+            }
+            
+            try {
+                console.log('Creating contact form...');
+                const form = await WebsiteContactForm.createContactForm({
+                    target: '#contact',
+                    theme: 'light',
+                    labels: {
+                        title: 'Send Me a Message',
+                        name: 'Your Name',
+                        email: 'Email Address',
+                        message: 'Your Message'
+                    },
+                    placeholders: {
+                        name: 'Enter your full name',
+                        email: 'your.email@example.com',
+                        message: 'Use the rich text editor below to format your message with headings, colors, lists, tables, and more!'
+                    },
+                    buttonText: 'Send Message',
+                    onSubmit: (data) => {
+                        console.log('Form submitted:', data);
+                        alert('Form data logged to console - check the browser console for details!');
+                    },
+                    onSuccessMessage: '🎉 Message sent successfully! We\'ll get back to you soon.',
+                    onErrorMessage: '❌ Failed to send message. Please try again.'
+                });
+                
+                console.log('Contact form initialized successfully!', form);
+                
+            } catch (error) {
+                console.error('Failed to initialize contact form:', error);
+                document.getElementById('contact').innerHTML = 
+                    `<div style="color: red; text-align: center; padding: 2rem;">
+                        <h3>Failed to load contact form</h3>
+                        <p>Error: ${error.message}</p>
+                        <p>Please check the browser console for details.</p>
+                    </div>`;
+            }
+        }
+        
+        // Wait for DOM and all scripts to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a small delay to ensure all scripts are loaded
+            setTimeout(initContactForm, 500);
+        });
+    </script>
+</body>
+</html>

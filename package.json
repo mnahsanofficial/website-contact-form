@@ -1,0 +1,61 @@
+{
+  "name": "website-contact-form",
+  "version": "1.0.0",
+  "description": "A framework-agnostic, TypeScript contact form library with CKEditor and EmailJS integration",
+  "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "keywords": [
+    "contact-form",
+    "ckeditor",
+    "emailjs",
+    "typescript",
+    "vanilla-js",
+    "framework-agnostic"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^40.0.0",
+    "emailjs-com": "^3.2.0"
+  },
+  "peerDependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^40.0.0",
+    "emailjs-com": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/website-contact-form.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/website-contact-form/issues"
+  },
+  "homepage": "https://github.com/yourusername/website-contact-form#readme"
+}
