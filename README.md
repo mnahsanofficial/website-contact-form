@@ -4,6 +4,12 @@ A **framework-agnostic**, **TypeScript** contact form library that any website c
 
 ![Contact Form Preview](https://via.placeholder.com/800x400/667eea/ffffff?text=Modern+Contact+Form+Preview)
 
+## 🌐 Live Demo
+
+**See it in action:** [Live Demo on Portfolio](https://my-portfolio-mnahsanofficials-projects.vercel.app/#contact)
+
+Experience the enhanced CKEditor with all formatting features, responsive design, and EmailJS integration.
+
 ## ✨ Features
 
 - 🚀 **Framework-agnostic** - Works with vanilla JS, React, Vue, Angular, or any framework
@@ -440,6 +446,14 @@ dist/                 # Built files (generated)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## 🏢 Company
+
+**TrioTrix Tech Solutions** - Empowering Tomorrow's Digital World
+
+- **Website:** [TrioTrix Tech Solutions](https://www.linkedin.com/company/triotrix-tech-solutions/)
+- **Specialties:** Web Development, SQA, Android Development, IT Consulting, Software Development
+- **Location:** Dhaka, Bangladesh
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -452,12 +466,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 **Email**: support@yourdomain.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/website-contact-form/issues)
-- 📖 **Documentation**: [Full API Docs](https://yourdomain.com/docs)
-- 💬 **Discord**: [Join our community](https://discord.gg/yourcommunity)
+- 📧 **Email**: nmahsanofficial@gmail.com
+- 🐛 **Issues**: [GitHub Issues](https://github.com/mnahsanofficial/website-contact-form/issues)
+- 📖 **Documentation**: [GitHub Repository](https://github.com/mnahsanofficial/website-contact-form)
+- 💼 **LinkedIn**: [Connect with Author](https://www.linkedin.com/in/mn-ahsan/)
+- 🏢 **Company**: [TrioTrix Tech Solutions](https://www.linkedin.com/company/triotrix-tech-solutions/)
 
 ---
 
-**Made with ❤️ for the web development community**
+**Made with ❤️ by [Nazmul Ahsan](https://www.linkedin.com/in/mn-ahsan/) at [TrioTrix Tech Solutions](https://www.linkedin.com/company/triotrix-tech-solutions/)**
 # website-contact-form

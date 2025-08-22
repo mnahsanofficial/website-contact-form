@@ -32,7 +32,7 @@
     "vanilla-js",
     "framework-agnostic"
   ],
-  "author": "Your Name",
+  "author": "Nazmul Ahsan <nmahsanofficial@gmail.com> (https://www.linkedin.com/in/mn-ahsan/)",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.0.0",
@@ -52,10 +52,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/website-contact-form.git"
+    "url": "git+https://github.com/mnahsanofficial/website-contact-form.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/website-contact-form/issues"
+    "url": "https://github.com/mnahsanofficial/website-contact-form/issues"
   },
-  "homepage": "https://github.com/yourusername/website-contact-form#readme"
+  "homepage": "https://github.com/mnahsanofficial/website-contact-form#readme"
 }
