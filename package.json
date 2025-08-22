@@ -1,6 +1,6 @@
 {
   "name": "website-contact-form",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A framework-agnostic, TypeScript contact form library with CKEditor and EmailJS integration",
   "type": "module",
   "main": "./dist/index.umd.js",
@@ -17,8 +17,7 @@
   "files": [
     "dist",
     "CHANGELOG.md",
-    "README.md",
-    "src/assets"
+    "README.md"
   ],
   "scripts": {
     "dev": "vite",

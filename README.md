@@ -2,7 +2,7 @@
 
 A **framework-agnostic**, **TypeScript** contact form library that any website can embed with a single function call. Features rich text editing with CKEditor 5 and optional email delivery via EmailJS.
 
-![Contact Form Preview](./src/assets/images/Screenshot%202025-08-22%20at%204.27.44%20PM.png)
+![Contact Form Preview](./src/assets/images/peview.png)
 
 *The enhanced contact form with CKEditor 5 rich text editor, featuring comprehensive formatting tools including bold, italic, links, tables, lists, and alignment options.*
 
